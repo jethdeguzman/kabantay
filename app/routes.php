@@ -11,7 +11,14 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('hello');
+Route::get('/flush', function(){
+  Session::flush();
 });
+Route::get('/head', function(){
+	return View::make('');
+});
+Route::controller('map','MapController');
+Route::controller('login','LoginController');
+Route::controller('save', 'PostController');
+Route::controller('sample', 'SampleController');
+Route::controller('/', 'HomeController');
